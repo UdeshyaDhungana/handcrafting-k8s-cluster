@@ -1,3 +1,3 @@
 - Scripts and files required for setting up a K8s cluster from scratch
 - Article dropping soon
-- It hard part wasn't writing these configs, but figuring out what to write ;)
+- The hard part wasn't writing these configs, but figuring out what to write ;)
