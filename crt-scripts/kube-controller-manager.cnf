@@ -1,0 +1,11 @@
+basicConstraints     = CA:FALSE
+extendedKeyUsage     = clientAuth, serverAuth
+keyUsage             = critical, digitalSignature, keyEncipherment
+nsCertType           = client
+nsComment            = "Kube Proxy Certificate"
+subjectAltName       = DNS:kube-controller-manager, IP:127.0.0.1
+subjectKeyIdentifier = hash
+
+[kube-proxy_distinguished_name]
+CN = system:kube-controller-manager
+O  = system:kube-controller-manager

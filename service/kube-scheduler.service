@@ -1,0 +1,18 @@
+[Unit]
+Description=Kubernetes Scheduler
+Documentation=https://github.com/kubernetes/kubernetes
+
+[Service]
+ExecStart=/usr/local/bin/kube-scheduler \
+  --authentication-kubeconfig=/var/lib/kubernetes/kube-scheduler.kubeconfig \
+  --kubeconfig=/var/lib/kubernetes/kube-scheduler.kubeconfig \
+  --client-ca-file=/var/lib/kubernetes/pki/ca.crt \
+  --tls-cert-file=/var/lib/kubernetes/pki/kube-scheduler.crt \
+  --tls-private-key-file=/var/lib/kubernetes/pki/kube-scheduler.key \
+  --leader-elect=true \
+  --v=2
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
